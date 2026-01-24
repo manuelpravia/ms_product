@@ -1,0 +1,14 @@
+
+quarkus:
+  http:
+    port: 8082
+  hibernate-orm:
+    database:
+      generation: update  # Esto sincroniza tus entidades con las tablas reales
+    log:
+      sql: true           # Para ver en consola qué está haciendo realmente
+  datasource:
+    db-kind: postgresql
+    username: bodgen
+    password: bodgen123
+    jdbc.url: jdbc:postgresql://localhost:5432/bodgendb

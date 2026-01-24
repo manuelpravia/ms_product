@@ -1,0 +1,47 @@
+{
+  "totalCount": 18,
+  "totalPages": 4,
+  "pageIndex": 0,
+  "pageSize": 5,
+  "productResponseDto": [
+    {
+      "id": 2,
+      "name": "Agua Cielo",
+      "description": "Agua de mesa sin gas",
+      "price": 2.6,
+      "createDate": "2026-01-17T00:13:08.653491Z",
+      "changeDate": "2026-01-17T00:13:08.653491Z",
+      "stock": 40,
+      "categoryId": 1,
+      "code": "3D2059EE",
+      "presentation": "Precio unitario",
+      "imageUrl": "http://localhost:8080/img/agua_cielo.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Inka Kola",
+      "description": "Gaseosa refrescante",
+      "price": 3.80,
+      "createDate": "2026-01-17T00:13:14.548636Z",
+      "changeDate": "2026-01-17T00:13:14.548636Z",
+      "stock": 40,
+      "categoryId": 4,
+      "code": "0156C0F9",
+      "presentation": "Precio unitario",
+      "imageUrl": "http://localhost:8080/img/inka_kola.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Red Bull",
+      "description": "Energizante alto en calorias",
+      "price": 2.6,
+      "createDate": "2026-01-17T00:13:16.535221Z",
+      "changeDate": "2026-01-17T00:13:16.535221Z",
+      "stock": 40,
+      "categoryId": 3,
+      "code": "245705D4",
+      "presentation": "Precio unitario",
+      "imageUrl": "http://localhost:8080/img/red_bull.jpg"
+    }
+  ]
+}

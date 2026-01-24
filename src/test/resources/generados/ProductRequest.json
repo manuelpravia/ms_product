@@ -1,0 +1,10 @@
+{
+  "name": "Agua Cielo",
+  "description": "Agua de mesa sin gas",
+  "price": 2.6,
+  "stock": 40,
+  "categoryId": 1,
+  "code": "3D2059EE",
+  "presentation": "Unit, pakage o box",
+  "imageUrl": "http://localhost:8080/img/avena.jpg"
+}
