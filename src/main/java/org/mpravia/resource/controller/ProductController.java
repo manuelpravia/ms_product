@@ -4,10 +4,13 @@ import io.quarkus.logging.Log;
 import jakarta.inject.Inject;
 import org.mpravia.api.ProductApi;
 import org.mpravia.mapper.ProductControllerMapper;
+import org.mpravia.model.ProductCodesRequest;
 import org.mpravia.model.ProductPageResponse;
 import org.mpravia.model.ProductRequest;
 import org.mpravia.model.ProductResponse;
 import org.mpravia.service.ProductService;
+
+import java.util.List;
 
 
 public class ProductController implements ProductApi {
@@ -55,6 +58,21 @@ public class ProductController implements ProductApi {
         Log.info("Getting product " + id);
 
         return productControllerMapper.toProductResponse(productService.getProductById(id));
+    }
+
+    /**
+     *
+     *
+     * @param productCodesRequest
+     * @return Successful operation
+     * @return Invalid input
+     */
+    @Override
+    public List<ProductResponse> getProductsByCode(ProductCodesRequest productCodesRequest) {
+        return productService.getProductsByCodes(productCodesRequest.getCodes())
+                .stream()
+                .map(productControllerMapper::toProductResponse)
+                .toList();
     }
 
     /**

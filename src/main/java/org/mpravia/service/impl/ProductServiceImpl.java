@@ -39,6 +39,20 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<ProductResponseDto> getProductsByCodes(List<String> codes) {
+
+        var products = productRepository.findByCodes(codes);
+        if (products.isEmpty()) {
+            throw new AppException("EB01","Products not found", Response.Status.NOT_FOUND);
+        }
+
+        return products
+                .stream()
+                .map(productServiceMapper::toProductResponseDto)
+                .toList();
+    }
+
+    @Override
     public ProductPageResponseDto getProducts(Integer page, Integer size) {
 
         PanacheQuery<Product> query = productRepository.findAll()
