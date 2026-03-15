@@ -12,10 +12,12 @@ import org.mpravia.dto.ProductRequestDto;
 import org.mpravia.dto.ProductResponseDto;
 import org.mpravia.handler.AppException;
 import org.mpravia.mapper.ProductServiceMapper;
+import org.mpravia.message.consumer.dto.ProductSold;
 import org.mpravia.repository.ProductRepository;
 import org.mpravia.repository.entity.Product;
 import org.mpravia.service.ProductService;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -123,6 +125,19 @@ public class ProductServiceImpl implements ProductService {
         }while (existCode);
 
         return newCode;
+    }
+
+    @Override
+    @Transactional
+    public void updateStockEvent(List<ProductSold> productSold) {
+
+        productSold.forEach(product -> {
+           Product productUpdate = productRepository.find("code", product.getProductCode())
+                   .firstResultOptional()
+                   .orElseThrow();
+            productUpdate.setStock(productUpdate.getStock()-(int)product.getQuantity());
+            productRepository.persist(productUpdate);
+        });
     }
 
 }

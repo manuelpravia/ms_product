@@ -111,6 +111,10 @@
             <artifactId>swagger-annotations</artifactId>
             <version>1.6.12</version>
         </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-messaging-kafka</artifactId>
+        </dependency>
 
         <!-- OBSEVABILIDAD -->
         <dependency>
